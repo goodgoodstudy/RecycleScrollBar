@@ -3,4 +3,10 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <color name="scrollbar_color">#80000000</color>
+    <color name="scrollbar_bg_color">#0AFFFFFF</color>
+    <color name="scrollbar_bg_line_color">#1A000000</color>
+
+
 </resources>

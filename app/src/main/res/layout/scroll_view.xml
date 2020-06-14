@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="10dp"
+	android:layout_height="380dp"
+	>
+	<View
+		android:id="@+id/scrollbar_bg"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@drawable/recycle_scrollbar_bg"
+		/>
+
+	<View
+		android:id="@+id/scrollbar"
+		android:layout_width="6dp"
+		android:layout_height="50dp"
+		android:background="@drawable/recycle_scrollbar"
+		android:layout_gravity="center_horizontal"
+		/>
+
+</FrameLayout>
+
+
