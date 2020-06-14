@@ -5,4 +5,4 @@
 
 
 
-![alt 效果](https://github.com/goodgoodstudy/RecycleScrollBar/blob/master/gifeditor_20200614_181145.gif)
+![效果](https://github.com/goodgoodstudy/RecycleScrollBar/blob/master/gifeditor_20200614_181145.gif)
