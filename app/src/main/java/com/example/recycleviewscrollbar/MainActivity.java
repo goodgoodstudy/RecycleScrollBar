@@ -21,7 +21,6 @@ import java.util.ArrayList;
  */
 public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
-    private Adapter mAdapter;
     private ScrollBar mScrollBarLayout;
 
     @Override
