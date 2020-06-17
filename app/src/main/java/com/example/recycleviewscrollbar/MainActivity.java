@@ -22,6 +22,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private ScrollBar mScrollBarLayout;
+    private MyAdapter madapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
         for (int i=0;i<100;i++){
             list.add(i);
         }
-        MyAdapter adapter = new MyAdapter(this,list);
+        madapter = new MyAdapter(this,list);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerView.setAdapter(adapter);
+        mRecyclerView.setAdapter(madapter);
         mScrollBarLayout.setRecycleView(mRecyclerView);
         mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -48,8 +49,14 @@ public class MainActivity extends AppCompatActivity {
                         mScrollBarLayout.setVisibility(View.INVISIBLE);
                         break;
                     case AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL://开始滑动
-                        Log.e("monkey","mScrollBarLayout VISIBLE");
-                        mScrollBarLayout.setVisibility(View.VISIBLE);
+                        if(mRecyclerView.getLayoutManager() instanceof LinearLayoutManager){
+                            int lastCompletelyVisibleItemPosition = ((LinearLayoutManager)mRecyclerView.getLayoutManager()).findLastCompletelyVisibleItemPosition();
+                            Log.e("monkey", "lastCompletelyVisibleItemPosition is : " + lastCompletelyVisibleItemPosition);
+                            if(lastCompletelyVisibleItemPosition < madapter.getItemCount() - 1){ //item超过一屏才显示
+                                Log.e("monkey","mScrollBarLayout VISIBLE");
+                                mScrollBarLayout.setVisibility(View.VISIBLE);
+                            }
+                        }
                         break;
                     default:
                         break;
